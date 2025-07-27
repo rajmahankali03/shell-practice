@@ -10,6 +10,8 @@ then
     echo "You are root user, proceeding with installation"
 fi
 
+# Function to validate installation
+# Takes exit status and package name as arguments   
 VALIDATE() {
     if [ $1 -eq 0 ];
     then
@@ -19,6 +21,17 @@ VALIDATE() {
         exit 1 # Exit with an error code if installation fails
     fi
 }
+
+# Check and install packages
+dnf list installed httpd
+if [ $? -ne 0 ]
+then
+    echo "httpd is not installed, proceeding with installation"
+    dnf install httpd -y
+    VALIDATE $? "httpd"
+else 
+    echo "httpd is already installed"
+fi  
 
 dnf list installed mysql
 if [ $? -ne 0 ]
