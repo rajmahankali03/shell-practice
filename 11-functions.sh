@@ -34,7 +34,7 @@ dnf list installed python3
 if [ $? -ne 0 ]
 then
     echo "python3 is not installed, proceeding with installation"
-    dnf install python33 -y
+    dnf install python3 -y
     VALIDATE $? "python3"
 else 
     echo "python3 is already installed"
@@ -44,7 +44,7 @@ dnf list installed nginx
 if [ $? -ne 0 ]
 then
     echo "nginx is not installed, proceeding with installation"
-    dnf install nginxx -y
+    dnf install nginx -y
     VALIDATE $? "nginx"
 else 
     echo "nginx is already installed"
