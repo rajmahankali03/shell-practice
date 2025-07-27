@@ -11,6 +11,12 @@ then
 fi
 
 VALIDATE() {
+    if [ $? -eq 0 ]; then
+        echo "$1 installation successful"
+    else
+        echo "$1 installation failed"
+        exit 1 # Exit with an error code if installation fails
+    fi
 
     dnf list installed mysql
 
@@ -18,10 +24,10 @@ VALIDATE() {
     then
         echo "MySQL is not installed, proceeding with installation"
         dnf install mysql -y
-       VALIDATE $? "mysql"
+       VALIDATE $1 "mysql"
     else 
         echo "MySQL is already installed"
         echo "No need to install again"
-        exit 0 # Exit with success code if already installed
+        
     fi
 }
