@@ -28,4 +28,26 @@ VALIDATE() {
         echo "MySQL is already installed"
         
     fi
+
+    dnf list installed python3
+    if [ $? -ne 0 ]
+    then
+        echo "python3 is not installed, proceeding with installation"
+        dnf install python3 -y
+       VALIDATE $? "python3"
+    else 
+        echo "python3 is already installed"
+        
+    fi
+
+    dnf list installed nginx
+    if [ $? -ne 0 ]
+    then
+        echo "nginx is not installed, proceeding with installation"
+        dnf install nginx -y
+       VALIDATE $? "nginx"
+    else 
+        echo "nginx is already installed"
+        
+    fi       
 }
