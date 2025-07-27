@@ -11,7 +11,7 @@ N="\e[0m"  # No color
 LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" 
-PACKAGES=("mysql" "httpd" "python3" "nginx")
+#PACKAGES=("mysql" "httpd" "python3" "nginx")
 
 mkdir -p $LOGS_FOLDER
 echo "Script started at $(date)" $>> $LOG_FILE
@@ -36,7 +36,9 @@ VALIDATE() {
     fi
 }
 
+#for package in ${PACKAGES[@]}
 for package in $@ 
+
 do
     dnf list installed $package $>>$LOG_FILE
     if [ $? -ne 0 ]
