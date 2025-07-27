@@ -22,4 +22,9 @@ then
             echo "Installation failed"
             exit 1 # Exit with an error code if installation fails
         fi
+    else 
+    echo "MySQL is already installed"
+    echo "No need to install again"
+    exit 0 # Exit with success code if already installed
+
 fi
