@@ -2,3 +2,5 @@
 # This script prints "Hello, World!" to the terminal.
 
 echo "Hello, World! from rajMahankali"
+# End of script
+exit 0
