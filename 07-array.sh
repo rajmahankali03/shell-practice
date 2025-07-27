@@ -1,5 +1,5 @@
 #!/bin/bash
-Movies=("one" "two" "three")
+Movies=("Indra" "Tagoor" "SVSK")
 echo "Movie no one is $Movies(0)"
 
 
