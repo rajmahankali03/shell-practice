@@ -47,7 +47,8 @@ then
     dnf install mysql -y
     VALIDATE $? "MySQL"
 else 
-    echo "MySQL is $Y already installed $N"
+  echo -e "$G MySQL $N" "$Y already installed $N"
+    
 fi
 
 dnf list installed python3
@@ -57,7 +58,8 @@ then
     dnf install python3 -y
     VALIDATE $? "python3"
 else 
-    echo "python3 $Y already installed $N"
+    echo -e "$G python3 $N" "$Y already installed $N"
+    
 fi
 
 dnf list installed nginx
@@ -67,5 +69,5 @@ then
     dnf install nginx -y
     VALIDATE $? "nginx"
 else 
-    echo "nginx $Y already installed $N"
+    echo -e "$G nginx $N" "$Y already installed $N"
 fi
