@@ -9,3 +9,10 @@ then
     else
     echo "You are root user, proceeding with installation"
 fi
+
+if [ $? -ie 0 ]; then
+    echo "Installation successful"
+else
+    echo "Installation failed"
+    exit 1 # Exit with an error code if installation fails
+fi
