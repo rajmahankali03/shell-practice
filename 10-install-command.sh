@@ -2,7 +2,7 @@
 
 userid=$(id -u)
 
-if [ $userid -ne 0 ];  # Check if the user ID is not equal to 0 (root user)]
+if [ $userid -ne 0 ];  # Check if the user ID is not equal to 0 (root user)
 then
     echo "Error: You are not root user, please run as root"
     exit 1 # Exit the script with an error code if not root
@@ -11,7 +11,8 @@ then
 fi
 
 dnf list installed mysql
-if[ $? -ne 0 ]
+
+if [ $? -ne 0 ]
 then
     echo "MySQL is not installed, proceeding with installation"
         dnf install mysql -y
@@ -21,3 +22,4 @@ then
             echo "Installation failed"
             exit 1 # Exit with an error code if installation fails
         fi
+fi
