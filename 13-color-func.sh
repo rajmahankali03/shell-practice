@@ -37,7 +37,7 @@ then
     dnf install httpd -y
     VALIDATE $? "httpd"
 else 
-    echo "httpd $Y already installed $N"
+    echo -e "$G httpd $N" "$Y already installed $N"
 fi  
 
 dnf list installed mysql
