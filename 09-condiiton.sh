@@ -1,6 +1,6 @@
 #!/bin/bash
 
-number=$0
+number=$1   
 
 if [ $number -lt 10 ]
 then
