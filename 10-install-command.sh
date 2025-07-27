@@ -10,7 +10,9 @@ then
     echo "You are root user, proceeding with installation"
 fi
 
-if [ $? -ie 0 ]; then
+dnf install mysql -y
+
+if [ $? -eq 0 ]; then
     echo "Installation successful"
 else
     echo "Installation failed"
