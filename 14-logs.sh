@@ -12,7 +12,7 @@ LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" 
 
-mkdir -P $LOG_FOLDER
+mkdir -P $LOGS_FOLDER
 echo "Script started at $(date)" $>> $LOG_FILE
 
 if [ $userid -ne 0 ];  # Check if the user ID is not equal to 0 (root user)
