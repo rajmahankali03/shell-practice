@@ -14,7 +14,7 @@ then
     echo -e "$R Error: You are not root user, please run as root $N"
     exit 1 # Exit the script with an error code if not root
     else
-    echo "You are root user, proceeding with installation"
+    echo -e "$G You are root user, proceeding with installation $N"
 fi
 
 # Function to validate installation
